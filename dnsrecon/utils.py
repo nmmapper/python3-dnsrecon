@@ -3,6 +3,7 @@ import json
 import csv
 import xml.etree.ElementTree as ET
 
+VERSION="1.0.0"
 
 def setup_logger():
     logging.basicConfig(

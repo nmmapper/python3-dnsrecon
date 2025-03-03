@@ -60,6 +60,9 @@ async def main():
         if args.output:
             save_results(results, args.output)
 
+def run_dnsrecon():
+    asyncio.run(main())
+    
 def save_results(data, format):
     if format == "json":
         save_to_json(data, "results.json")

@@ -4,7 +4,8 @@ import asyncio
 class DNSEnumerator(object):
     def __init__(self, domain):
         self.domain = domain
-        self.resolver = aiodns.DNSResolver()
+        self.loop = asyncio.get_event_loop()
+        self.resolver = aiodns.DNSResolver(loop=self.loop)
 
     async def get_a_records(self):
         return await self._resolve_record('A')
